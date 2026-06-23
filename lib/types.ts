@@ -10,6 +10,9 @@ export interface PartCategory {
   slug: string;
   icon: string;
   order: number;
+  level: 1 | 2;
+  parentId: string | null;
+  hidden?: boolean;
 }
 
 export interface PartType {

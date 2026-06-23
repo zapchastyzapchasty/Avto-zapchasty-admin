@@ -68,6 +68,7 @@ export function errMessage(e: unknown): string {
 export interface SearchParams {
   q?: string;
   categoryId?: string;
+  partTypeId?: string;
   brandId?: string;
   modelId?: string;
   condition?: string;
@@ -115,6 +116,10 @@ export const api = {
       .then((r) => r.data.brands),
   brandModels: (brandId: string) =>
     http.get<{ models: CarModel[] }>(`/catalog/brands/${brandId}/models`).then((r) => r.data.models),
+  subcategories: (categoryId: string) =>
+    http
+      .get<{ subcategories: PartCategory[] }>(`/catalog/categories/${categoryId}/subcategories`)
+      .then((r) => r.data.subcategories),
   categoryPartTypes: (categoryId: string) =>
     http
       .get<{ partTypes: PartType[] }>(`/catalog/categories/${categoryId}/part-types`)

@@ -12,6 +12,7 @@ import { useLocalize } from '@/lib/i18n';
 
 // Har bir kategoriya slug'iga mos lucide ikonka
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
+  podkapot: Cog,
   body: Car,
   doors: DoorOpen,
   trunk: Package,
@@ -55,7 +56,7 @@ export function CategoryCard({ category, index = 0 }: { category: PartCategory; 
 
   return (
     <Link
-      href={`/search?categoryId=${category._id}`}
+      href={`/category/${category._id}?name=${encodeURIComponent(name)}`}
       style={{ animationDelay: `${Math.min(index, 12) * 35}ms` }}
       className="group flex animate-fade-up flex-col items-center gap-2.5 rounded-lg border border-line bg-card p-4 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:border-amber/50 hover:shadow-hover motion-reduce:animate-none motion-reduce:transform-none"
     >

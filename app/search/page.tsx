@@ -34,6 +34,7 @@ function SearchContent() {
     () => ({
       q: sp.get('q') || undefined,
       categoryId: sp.get('categoryId') || undefined,
+      partTypeId: sp.get('partTypeId') || undefined,
       brandId: sp.get('brandId') || undefined,
       modelId: sp.get('modelId') || undefined,
       condition: sp.get('condition') || undefined,
