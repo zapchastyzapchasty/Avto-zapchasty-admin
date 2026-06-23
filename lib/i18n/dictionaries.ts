@@ -150,7 +150,7 @@ const uz = {
     fillRequired: "Majburiy maydonlarni to'ldiring",
     requiredHint: "Kategoriya, detal turi, sarlavha va narx majburiy",
     maxPhotos: 'Maksimal 8 ta rasm',
-    posted: "E'lon joylandi!",
+    posted: "E'lon joylandi! 2 daqiqadan so'ng avtomatik faollashadi.",
   },
   myListings: {
     title: "Mening e'lonlarim",
@@ -367,7 +367,7 @@ const ru: typeof uz = {
     fillRequired: 'Заполните обязательные поля',
     requiredHint: 'Категория, тип детали, заголовок и цена обязательны',
     maxPhotos: 'Максимум 8 фото',
-    posted: 'Объявление опубликовано!',
+    posted: 'Объявление опубликовано! Активируется автоматически через 2 минуты.',
   },
   myListings: {
     title: 'Мои объявления',

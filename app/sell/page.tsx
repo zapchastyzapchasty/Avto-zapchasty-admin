@@ -107,9 +107,9 @@ function SellForm() {
         delivery,
         phone: phone.trim(),
       };
-      const listing = await api.createListing(body);
+      await api.createListing(body);
       toast.show(t.sell.posted, 'success');
-      router.push(`/listing/${listing._id}`);
+      router.push('/my-listings');
     } catch (err) {
       toast.show(errMessage(err), 'error');
     } finally {
