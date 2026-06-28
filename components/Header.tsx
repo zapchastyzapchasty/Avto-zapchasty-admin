@@ -44,7 +44,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-bg/80 shadow-header backdrop-blur-xl supports-[backdrop-filter]:bg-bg/70">
       <div className="container-page">
-        <div className="flex h-20 items-center gap-4">
+        <div className="flex items-center gap-4">
           <Logo />
 
           <div className="hidden flex-1 md:block">
