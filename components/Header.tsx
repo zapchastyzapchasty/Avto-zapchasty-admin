@@ -18,7 +18,7 @@ function Logo() {
       <Image
         src="/logo.png"
         alt="Zapchasty"
-        width={160}
+        width={260}
         height={150}
         priority
         className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-16"
