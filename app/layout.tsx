@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s — Zapchasty',
   },
   description:
-    "O'zbekistondagi avto ehtiyot qismlar onlayn bozori. OEM raqam, brend va model bo'yicha tez toping. Ishonchli sotuvchilar.",
+    "O'zbekistondagi avto ehtiyot qismlar onlayn bozori. Ehtiyot qism nomi bo'yicha tez toping. Ishonchli sotuvchilar.",
   keywords: [
     'avto ehtiyot qismlar',
     'zapchast',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: 'Zapchasty',
     title: 'Zapchasty — Avto ehtiyot qismlar bozori',
     description:
-      "O'zbekistondagi avto ehtiyot qismlar onlayn bozori. OEM raqam, brend va model bo'yicha tez toping.",
+      "O'zbekistondagi avto ehtiyot qismlar onlayn bozori. Ehtiyot qism nomi bo'yicha tez toping.",
     images: [
       {
         url: 'https://7harivf5tf.ufs.sh/f/z3vBnfCC3XgsdIdVUBXRULnVCO8oXaA6qsfzwbScd3kKpuYe',

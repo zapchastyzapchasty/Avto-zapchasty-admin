@@ -2,13 +2,11 @@
 
 import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
-import { ArrowRight, ShieldCheck, Truck, Search as SearchIcon, Tag } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Truck, Search as SearchIcon, Tag, PackageOpen } from 'lucide-react';
 import { api } from '@/lib/api';
 import { useT } from '@/lib/i18n';
-import { SearchBar } from '@/components/SearchBar';
 import { CategoryCard } from '@/components/CategoryCard';
 import { ListingCard, ListingCardSkeleton } from '@/components/ListingCard';
-import { Reveal } from '@/components/Reveal';
 
 
 export default function HomePage() {
@@ -23,40 +21,62 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-line bg-gradient-to-br from-navy-50 via-bg to-amber-50/60">
-        {/* Dekorativ suzuvchi bloklar — navy + orange */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute -left-16 -top-16 h-64 w-64 animate-float rounded-full bg-navy-100/50 blur-3xl" />
+      <section className="relative overflow-hidden border-b border-line bg-navy-800 text-white">
+        {/* Premium fon — navy gradient + nozik to'r + suzuvchi yorug'lik */}
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-700 via-navy-800 to-navy-900" />
+          <div className="absolute inset-0 bg-hero-grid bg-[length:40px_40px] opacity-[0.18]" />
+          <div className="absolute -left-24 -top-24 h-80 w-80 animate-float rounded-full bg-amber-500/20 blur-3xl" />
           <div
-            className="absolute -right-10 top-10 h-72 w-72 animate-float rounded-full bg-amber-100/50 blur-3xl"
+            className="absolute -right-16 top-8 h-96 w-96 animate-float rounded-full bg-navy-500/40 blur-3xl"
             style={{ animationDelay: '1.5s' }}
           />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy-900/60 to-transparent" />
         </div>
 
-        <div className="container-page relative py-14 sm:py-20">
+        <div className="container-page relative py-16 sm:py-24">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex animate-fade-up items-center gap-1.5 rounded-full border border-amber/30 bg-card px-3 py-1 text-xs font-semibold text-amber-700">
+            <span className="inline-flex animate-fade-up items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-amber-200 backdrop-blur">
               <Tag size={13} /> {t.home.badge}
             </span>
             <h1
-              className="mt-4 animate-fade-up text-3xl font-extrabold leading-tight tracking-tight text-navy-800 sm:text-5xl"
+              className="mt-5 animate-fade-up text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-6xl"
               style={{ animationDelay: '80ms' }}
             >
-              {t.home.heroTitle1} <span className="text-amber-600">{t.home.heroTitle2}</span>
+              {t.home.heroTitle1}{' '}
+              <span className="bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
+                {t.home.heroTitle2}
+              </span>
             </h1>
             <p
-              className="mt-4 animate-fade-up text-base text-muted sm:text-lg"
+              className="mx-auto mt-5 max-w-xl animate-fade-up text-base text-navy-100/90 sm:text-lg"
               style={{ animationDelay: '160ms' }}
             >
               {t.home.heroSubtitle}
             </p>
-            <div className="mx-auto mt-7 max-w-xl animate-fade-up" style={{ animationDelay: '240ms' }}>
-              <SearchBar size="lg" />
+            <div
+              className="mt-8 flex animate-fade-up flex-col items-center justify-center gap-3 sm:flex-row"
+              style={{ animationDelay: '240ms' }}
+            >
+              <Link
+                href="/search"
+                className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-amber px-7 text-base font-semibold text-ink shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:bg-amber-600 hover:shadow-hover active:scale-95 sm:w-auto"
+              >
+                <PackageOpen size={19} />
+                {t.home.ctaBrowse}
+                <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/sell"
+                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-md border border-white/20 bg-white/5 px-7 text-base font-semibold text-white backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10 active:scale-95 sm:w-auto"
+              >
+                {t.home.ctaSell}
+              </Link>
             </div>
           </div>
 
           {/* Afzalliklar */}
-          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
             {[
               { icon: <SearchIcon size={18} />, title: t.home.feat1Title, text: t.home.feat1Text },
               { icon: <ShieldCheck size={18} />, title: t.home.feat2Title, text: t.home.feat2Text },
@@ -128,13 +148,13 @@ export default function HomePage() {
 
 function Feature({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) {
   return (
-    <div className="group flex items-center gap-3 rounded-lg border border-line bg-card/70 px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber/40 hover:bg-card hover:shadow-card">
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-50 text-amber-600 transition-transform duration-300 group-hover:scale-110">
+    <div className="group flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-3.5 backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-amber/40 hover:bg-white/10">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber/15 text-amber-300 transition-transform duration-300 group-hover:scale-110">
         {icon}
       </span>
       <div>
-        <p className="text-sm font-bold text-ink">{title}</p>
-        <p className="text-xs text-muted">{text}</p>
+        <p className="text-sm font-bold text-white">{title}</p>
+        <p className="text-xs text-navy-100/80">{text}</p>
       </div>
     </div>
   );

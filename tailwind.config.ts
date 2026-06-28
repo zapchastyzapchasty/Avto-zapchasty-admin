@@ -18,6 +18,9 @@ const config: Config = {
           DEFAULT: '#f47a20',
           50: '#fff3ea',
           100: '#fde2cc',
+          200: '#fbcfa6',
+          300: '#f9b478',
+          400: '#f6974a',
           500: '#f47a20',
           600: '#e06614',
           700: '#bd5210',
@@ -53,6 +56,11 @@ const config: Config = {
         card: '0 1px 2px rgba(25,26,29,0.04), 0 4px 16px -8px rgba(25,26,29,0.10)',
         hover: '0 4px 12px rgba(25,26,29,0.08), 0 12px 32px -12px rgba(25,26,29,0.18)',
         header: '0 1px 0 rgba(231,229,225,0.9)',
+        glow: '0 8px 24px -6px rgba(244,122,32,0.45)',
+      },
+      backgroundImage: {
+        'hero-grid':
+          'linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)',
       },
       maxWidth: {
         container: '1240px',

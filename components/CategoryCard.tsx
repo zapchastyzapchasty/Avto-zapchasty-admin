@@ -58,12 +58,12 @@ export function CategoryCard({ category, index = 0 }: { category: PartCategory; 
     <Link
       href={`/category/${category._id}?name=${encodeURIComponent(name)}`}
       style={{ animationDelay: `${Math.min(index, 12) * 35}ms` }}
-      className="group flex animate-fade-up flex-col items-center gap-2.5 rounded-lg border border-line bg-card p-4 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:border-amber/50 hover:shadow-hover motion-reduce:animate-none motion-reduce:transform-none"
+      className="group flex animate-fade-up flex-col items-center gap-2.5 rounded-xl border border-line bg-card p-4 text-center shadow-card transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-amber/50 hover:shadow-hover motion-reduce:animate-none motion-reduce:transform-none"
     >
-      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 text-amber-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-100 group-hover:text-amber-700">
+      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 text-amber-600 ring-1 ring-amber/10 transition-all duration-300 group-hover:scale-110 group-hover:from-amber-100 group-hover:to-amber-50 group-hover:text-amber-700 group-hover:ring-amber/30">
         <Icon size={24} strokeWidth={2} className="transition-transform duration-300 group-hover:-rotate-6" />
       </span>
-      <span className="text-sm font-semibold leading-snug text-ink">{name}</span>
+      <span className="text-sm font-semibold leading-snug text-ink transition-colors group-hover:text-navy-700">{name}</span>
     </Link>
   );
 }
