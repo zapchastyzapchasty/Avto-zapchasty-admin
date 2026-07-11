@@ -74,8 +74,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="uz" className={inter.variable}>
       <meta name="google-site-verification" content="HaWDnwqi15ak1gQEotaelGBnb8SqTP-NImS_Oq6V66A" />
-      
       <body>
+        
         <QueryProvider>
           <ToastProvider>
             <div className="flex min-h-screen flex-col">
