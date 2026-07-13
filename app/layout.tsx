@@ -74,6 +74,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="uz" className={inter.variable}>
       <meta name="google-site-verification" content="HaWDnwqi15ak1gQEotaelGBnb8SqTP-NImS_Oq6V66A" />
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XB1D4RVYT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8XB1D4RVYT');
+    </script>
       <body>
         
         <QueryProvider>
