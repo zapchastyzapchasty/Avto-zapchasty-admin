@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import { QueryProvider } from '@/lib/query-provider';
 import { ToastProvider } from '@/components/Toast';
@@ -45,6 +46,9 @@ export const metadata: Metadata = {
     shortcut: '/harf-logo-favicon-32px.png',
   },
   manifest: '/manifest.webmanifest',
+  verification: {
+    google: 'HaWDnwqi15ak1gQEotaelGBnb8SqTP-NImS_Oq6V66A',
+  },
   openGraph: {
     type: 'website',
     locale: 'uz_UZ',
@@ -73,18 +77,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="uz" className={inter.variable}>
-      <meta name="google-site-verification" content="HaWDnwqi15ak1gQEotaelGBnb8SqTP-NImS_Oq6V66A" />
-     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8XB1D4RVYT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-8XB1D4RVYT');
-    </script>
       <body>
-        
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-8XB1D4RVYT"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8XB1D4RVYT');
+          `}
+        </Script>
         <QueryProvider>
           <ToastProvider>
             <div className="flex min-h-screen flex-col">
